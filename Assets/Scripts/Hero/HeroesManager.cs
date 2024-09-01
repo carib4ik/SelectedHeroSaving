@@ -61,6 +61,11 @@ namespace Hero
         public HeroController GetSavedHeroController()
         {
             var selectedHeroName = PrefsManager.LoadActiveHero();
+
+            if (selectedHeroName == "")
+            {
+                return _heroControllers[0];
+            }
             
             return _heroControllers.FirstOrDefault(heroController => 
                 heroController.HeroSettings.Name == selectedHeroName);

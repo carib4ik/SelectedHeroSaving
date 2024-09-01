@@ -28,6 +28,8 @@ namespace HeroSelection
         {
             gameObject.SetActive(true);
             _currentHeroController = heroController;
+
+            CheckBoughtHeroes();
         
             _heroSelectionScreenView.UpdateHeroSelectionView(_currentHeroController.HeroSettings);
 
@@ -43,6 +45,8 @@ namespace HeroSelection
             {
                 _currentHeroController.HeroSettings.WasBought = true;
                 _heroSelectionScreenView.UpdateHeroSelectionView(_currentHeroController.HeroSettings);
+                
+                PrefsManager.SaveBoughtHero(_currentHeroController.HeroSettings.Name);
             }
         }
 
@@ -86,6 +90,22 @@ namespace HeroSelection
         private void OnDisable()
         {
             _heroSwitcher.HeroChanged -= OnHeroChanged;
+        }
+        
+        private void CheckBoughtHeroes()
+        {
+            var boughtHeroes = PrefsManager.LoadBoughtHeroes().Split(" ");
+
+            foreach (var heroController in _heroControllers)
+            {
+                foreach (var boughtHero in boughtHeroes)
+                {
+                    if (heroController.HeroSettings.Name == boughtHero)
+                    {
+                        heroController.HeroSettings.WasBought = true;
+                    }
+                }
+            }
         }
     }
 }

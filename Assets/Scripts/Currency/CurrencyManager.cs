@@ -10,6 +10,11 @@ namespace Currency
 
         private void Start()
         {
+            if (PrefsManager.LoadMoney() != 0)
+            {
+                _money = PrefsManager.LoadMoney();
+            }
+            
             MoneyValueChanged.Invoke(_money);
         }
 

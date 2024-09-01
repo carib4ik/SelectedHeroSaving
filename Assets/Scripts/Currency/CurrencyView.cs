@@ -10,6 +10,7 @@ namespace Currency
         public void UpdateMoneyView(int value)
         {
             _moneyLabel.text = value.ToString();
+            PrefsManager.SaveMoney(value);
         }        
     }
 }
