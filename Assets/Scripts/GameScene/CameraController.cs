@@ -23,9 +23,6 @@ namespace GameScene
             var smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _smoothSpeed);
             
             transform.position = smoothedPosition;
-
-            // Опционально: если нужно, чтобы камера всегда смотрела на игрока
-            // transform.LookAt(_target);
         }
     }
 }
