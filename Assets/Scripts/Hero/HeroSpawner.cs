@@ -1,14 +1,21 @@
-using Hero;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class HeroSpawner : MonoBehaviour
+namespace Hero
 {
-    private void Start()
+    public class HeroSpawner : MonoBehaviour
     {
-        var heroesManager = FindObjectOfType<HeroesManager>();
+        [SerializeField] private Camera _camera;
 
-        Instantiate(heroesManager.GetSavedHeroController().gameObject, transform);
-        
-        heroesManager.gameObject.SetActive(false);
+        private GameObject _hero;
+    
+        private void Awake()
+        {
+            var heroesManager = FindObjectOfType<HeroesManager>();
+            _hero = Instantiate(heroesManager.GetSavedHeroController().gameObject, transform);
+            Destroy(heroesManager.gameObject);
+            _hero.GetComponent<HeroMovementController>().enabled = true;
+            _hero.GetComponent<NavMeshAgent>().enabled = true;
+        }
     }
 }

@@ -257,6 +257,9 @@ GameObject:
   - component: {fileID: 4630395971456208431}
   - component: {fileID: 4690830139892754945}
   - component: {fileID: 4597047137962601297}
+  - component: {fileID: 6825089140012720776}
+  - component: {fileID: -2511067732078776847}
+  - component: {fileID: 9102111684929161845}
   m_Layer: 0
   m_Name: NoWeapon01
   m_TagString: NoWeapon01
@@ -381,6 +384,52 @@ MonoBehaviour:
     <WasBought>k__BackingField: 1
     <Price>k__BackingField: 0
     <IsSelected>k__BackingField: 0
+--- !u!195 &6825089140012720776
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631963978777973039}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.32
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.73
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-2511067732078776847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631963978777973039}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63c3f87454ce134b9f1e955f9b44188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9102111684929161845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631963978777973039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8b4c8ac9a3c1141a26d73134c8115b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4631967629009302705
 GameObject:
   m_ObjectHideFlags: 0
